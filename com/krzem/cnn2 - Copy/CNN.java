@@ -57,17 +57,17 @@ public class CNN{
 			psw=Math.max(psw,l._params(li).length());
 			li=l.o_size(li);
 		}
-		String o=String.format("Layer Name %s │ Layer Data %s │ Size %s │ Param # %s\n%s┼%s┼%s┼%s\nInput%s │ {width = %d, height = %d, depth = %d}%s │ [%d %d %d]%s │ 0%s\n",this._pad(nsw-11," "),this._pad(dsw-11," "),this._pad(osw-5," "),this._pad(psw-9," "),this._pad(nsw+1,"─"),this._pad(dsw+2,"─"),this._pad(osw+2,"─"),this._pad(psw+2,"─"),this._pad(nsw-5," "),this.inW,this.inH,this.inD,this._pad(dsw-Integer.toString(this.inW).length()-Integer.toString(this.inH).length()-Integer.toString(this.inD).length()-31," "),this.inW,this.inH,this.inD,this._pad(osw-Integer.toString(this.inW).length()-Integer.toString(this.inH).length()-Integer.toString(this.inD).length()-4," "),this._pad(psw-1," "));
+		String o=String.format("Layer Name %s â”‚ Layer Data %s â”‚ Size %s â”‚ Param # %s\n%sâ”¼%sâ”¼%sâ”¼%s\nInput%s â”‚ {width = %d, height = %d, depth = %d}%s â”‚ [%d %d %d]%s â”‚ 0%s\n",this._pad(nsw-11," "),this._pad(dsw-11," "),this._pad(osw-5," "),this._pad(psw-9," "),this._pad(nsw+1,"â”€"),this._pad(dsw+2,"â”€"),this._pad(osw+2,"â”€"),this._pad(psw+2,"â”€"),this._pad(nsw-5," "),this.inW,this.inH,this.inD,this._pad(dsw-Integer.toString(this.inW).length()-Integer.toString(this.inH).length()-Integer.toString(this.inD).length()-31," "),this.inW,this.inH,this.inD,this._pad(osw-Integer.toString(this.inW).length()-Integer.toString(this.inH).length()-Integer.toString(this.inD).length()-4," "),this._pad(psw-1," "));
 		li=new int[]{this.inW,this.inH,this.inD};
 		for (Layer l:this.layers){
 			String ns=l._name();
 			String ds=l._data();
 			String os=l._output(li);
 			String ps=l._params(li);
-			o+=String.format("%s%s │ %s%s │ %s%s │ %s%s\n",ns,this._pad(nsw-ns.length()," "),ds,this._pad(dsw-ds.length()," "),os,this._pad(osw-os.length()," "),ps,this._pad(psw-ps.length()," "));
+			o+=String.format("%s%s â”‚ %s%s â”‚ %s%s â”‚ %s%s\n",ns,this._pad(nsw-ns.length()," "),ds,this._pad(dsw-ds.length()," "),os,this._pad(osw-os.length()," "),ps,this._pad(psw-ps.length()," "));
 			li=l.o_size(li);
 		}
-		o="\n"+o+String.format("Output%s │ {size = %d}%s │ [%d]%s │ 0%s\n",this._pad(nsw-6," "),li[0],this._pad(dsw-Integer.toString(li[0]).length()-9," "),li[0],this._pad(osw-Integer.toString(li[0]).length()-2," "),this._pad(psw-1," "));
+		o="\n"+o+String.format("Output%s â”‚ {size = %d}%s â”‚ [%d]%s â”‚ 0%s\n",this._pad(nsw-6," "),li[0],this._pad(dsw-Integer.toString(li[0]).length()-9," "),li[0],this._pad(osw-Integer.toString(li[0]).length()-2," "),this._pad(psw-1," "));
 		System.out.println(o);
 	}
 
